@@ -48,63 +48,78 @@ From the NFL's operation website, the changes to the rule are listed as follows:
 - Any kick that goes out of the back of the end zone (in the air or bounces) – touchback to B30 yard line
 
 
-## Results
+# Results
 
-# Touchback Rates
-For my first question: did the new rule lead to more returns? I was able to do a simple touchback percentage calculation and see that that 63.3% of kickoffs this year were touchbacks.  From the article found at this link: https://www.forbes.com/betting/football/nfl/kickoff-rule-change/#:~:text=Kick%20returners%20avoided%20these%20hits,in%20NFL%20history%20(21.8%25). , the 2023 touchback percentage was 79.2%.  So after one year with the dynamic kickoff, there was a clear rise in returned kickoffs.
+## Touchback Rates
 
-I also wanted to look into team-by-team data to see if there were any teams that were choosing to kick more touchbacks, or any teams that were better at gaining yards on returns.
+The first question was straightforward: did the new rule lead to more returns?
+
+Using a simple touchback percentage calculation, I found that 63.3% of kickoffs in 2024 were touchbacks. For comparison, the 2023 touchback percentage was 79.2% ([source](https://www.forbes.com/betting/football/nfl/kickoff-rule-change/#:~:text=Kick%20returners%20avoided%20these%20hits,in%20NFL%20history%20(21.8%25))). After just one year under the dynamic kickoff structure, there was a clear and substantial increase in returned kickoffs.
+
+The rule successfully changed behavior.
+
+To understand whether teams were strategically adjusting, I broke the data down by team — both from the perspective of the kicking team and the return team.
 
 ![Kicking Team Touchback Percentage](reports/figures/kicking_team_touchback_percentage.png)
 
- The plot above shows the percentage of the time that teams kicked touchbacks in descending order.  Some teams like the Commanders and Saints kicked touchbacks very rarely, and other teams like the Jaguars and Colts Kicked Touchbacks over 80% of the time.
+The plot above shows the percentage of the time that teams kicked touchbacks. Some teams, like the Commanders and Saints, rarely kicked touchbacks. Others, like the Jaguars and Colts, kicked touchbacks more than 80% of the time.
 
-![Return Team Tuchback Taken Percentage](reports/figures/return_team_touchback_taken_percentage.png)
+![Return Team Touchback Taken Percentage](reports/figures/return_team_touchback_taken_percentage.png)
 
-The above plot shows similar information from the perspective of the returning team, how often did they take a touchback?  All teams besides the eagles (who coincidentally won the super bowl the year that this data was taken from), took touchbacks more than 50% of the time.  One thing to notice is the league leading touchback taken rate of the Broncos.  I found in my next analysis that this return unit had the highest yards per return in the league, so it makes sense that teams wouldn't want to kick them the ball.  Teams also may opt to take a high percentage of touchbacks because their return unit isn't very good, and they know that the touchback will provide them better starting field position.
+From the returning team perspective, nearly every team took touchbacks more than 50% of the time — with the Eagles being a notable exception (and coincidentally, the Super Bowl winner that season). One interesting team is the Broncos, who had the highest touchback taken rate. In later analysis, I found that this return unit also led the league in yards per return, which likely explains why opponents avoided putting the ball in play against them.
+
+Teams may also choose to take frequent touchbacks if their return unit is weak, knowing that the guaranteed field position from a touchback is preferable to risking a short return.
+
+The rule clearly put the ball in play more often. The next question is whether that change meaningfully shifted field position.
+
+---
 
 # Starting Field Position
-I also plotted kicking and returning team average starting field position on non touchback kickoffs to see what teams had figured out any strategies to exploit this new rule.
+
+To evaluate the impact of additional returns, I analyzed average starting field position on non-touchback kickoffs from both the kicking and returning team perspectives.
 
 ![Kicking Team Average Opponent Starting Field Position](reports/figures/kicking_team_average_opponent_starting_field_position_non_touchbacks.png)
 
 ![Return Team Average Starting Field Position](reports/figures/return_team_average_starting_field_position_non_touchbacks.png)
 
-From these plots we can see how good teams are at defending kickoff returns and how good teams are at returning kicks.  In 2024, 5 teams had an average return distance past the 30 yard line.  I interpret this to mean that for most teams, its a strategic play to force them to return, since on average your defense would be gaining field position.  The Kicking Team Opponent Starting Field Position Plot shows how good teams are at defending returns.  Again, we only see 5 teams that on average allowed a return past the 30 yard line, indicating a similar strategic trend as the other plot, for most teams it makes sense to put the ball in play.
+These plots show how effective teams were at defending kickoff returns and how successful return units were at generating field position.
+
+In 2024, only five teams averaged starting past the 30-yard line on returns. I interpret this as evidence that, for most teams, forcing a return is strategically favorable: on average, the defense gains field position relative to a touchback.
+
+The defensive side shows a similar pattern: only five teams allowed opponents to start past the 30 on average. This reinforces the idea that most teams benefit from putting the ball in play under the current rule structure.
+
+To explore the relationship between return quality and touchback frequency, I plotted the following scatter relationships:
 
 ![Touchback Kicked vs Average Opponent Starting Field Position](reports/figures/touchback_kicked_vs_average_starting_field_position.png)
 
 ![Touchback Taken vs Average Return Length](reports/figures/touchback_taken_vs_average_return_length.png)
 
-I investigated the relationship between touchback kicked/taken and return unit success by making scatter plots of the breakdowns above.  We can see that there is a slight correlation between how good a team is on their returns and the amount of touchbacks they take.  Teams are far less likely to allow teams with good return units the chance at a big play, and will do their best to prevent their returner from taking the ball out.  
+These show a slight but intuitive correlation: teams are less likely to allow strong return units the opportunity for explosive plays. Opponents tend to increase touchback rates against teams with higher average return yards.
 
-Another conclusion is that while the ball certainly was more in play this season, the league probably wants the touchback taken % to be even lower, hence moving the touchback starting field position to the 35 yard line for the 2025 season.  With this change, there is now no team that would get better field position on average from returns than taking a touchback, which will force teams to kick into the landing zone more, generating more returns.
+While the ball was clearly more in play this season, the league appears to want even fewer touchbacks — which likely motivated the decision to move the touchback starting position to the 35-yard line for the 2025 season. Under that structure, no team would, on average, gain better field position from returning than from taking a touchback. This change effectively forces more kicks into the landing zone, generating even more returns.
+
+At this point, we know the rule increased returns and slightly shifted average starting position. The final question is whether that small shift matters.
+
+---
 
 # It's only a few yards — why does it matter?
 
-Lastly, I wanted to investigate how starting field position impacts the likelihood of scoring on a drive. I began by calculating the average yards gained per drive across the league.
+To evaluate the importance of starting position, I examined how field position impacts the likelihood of scoring on a drive.
 
-The average drive gains roughly 34 yards. With the average starting field position after a kickoff being the 29-yard line, that places the typical drive ending around the opponent’s 37-yard line — roughly a 54-yard field goal attempt. That distance sits right at the edge of most kickers’ reliable range (analysis shown below). In other words, the “average” drive already operates near the threshold between attempting points and punting.
+The average drive gains roughly 34 yards. With the average starting field position after a kickoff at the 29-yard line, the typical drive ends around the opponent’s 37-yard line — roughly a 54-yard field goal attempt. That distance sits at the outer edge of most kickers’ reliable range. In other words, the average drive already operates near the threshold between punting and attempting points.
 
-This is where a five-yard difference starts to matter. Moving a drive from the 29 to the 34-yard line does not just shift field position slightly — it meaningfully increases the likelihood that an average drive ends within realistic scoring range. Obviously, from team to team and game to game there are many variables that impact whether a team scores more than whether the kickoff was returned or resulted in a touchback. However, by normalizing across the entire league — from elite offenses to struggling ones — we can isolate the structural impact of starting field position itself.
+This is where a five-yard difference becomes meaningful.
+
+Moving a drive from the 29 to the 34-yard line does not simply shift the field slightly — it meaningfully increases the probability that an average drive ends within realistic scoring range. While scoring outcomes depend on many contextual factors (offensive efficiency, defensive strength, game script), normalizing across the entire league allows us to isolate the structural effect of starting field position.
 
 ![Field Goal Make Percentage by Yard Line](reports/figures/field_goal_make_percentage_by_yard_line.png)
 
-To further illustrate this effect, I plotted scoring drive percentage by starting field position bins.
+To further quantify this relationship, I plotted scoring drive percentage by starting yard line bins.
 
 ![Scoring Drive Percentage by Starting Yard Line](reports/figures/scoring_drive_percentage_by_starting_yard_line_bins.png)
 
 The results show a clear jump in scoring probability once drives begin past the 30-yard line, with scoring rates exceeding 50% for drives starting beyond the 35.
 
-In isolation, five yards may seem insignificant. But league-wide drive data suggests those yards often determine whether a drive ends in a marginal long field goal attempt or a realistic scoring opportunity. Over the course of a season — across hundreds of drives — those small shifts in expected field position compound. In a league defined by narrow margins, five yards is not trivial; it meaningfully shifts the probability of scoring.
+In isolation, five yards may seem insignificant. But league-wide drive data suggests those yards frequently determine whether a drive ends in a marginal long field goal attempt or a realistic scoring opportunity. Over the course of a season — across hundreds of drives — those marginal shifts compound. In a league defined by narrow margins, five yards is not cosmetic; it meaningfully shifts scoring probability.
 
-
-
-
-
-
-
-
-
-
-
+The dynamic kickoff rule does not radically transform offensive football. Instead, it subtly moves the average starting point of drives — and that starting point carries measurable consequences.
