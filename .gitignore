@@ -1,0 +1,19 @@
+# environments
+.venv/
+venv/
+.env
+
+# python
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/
+
+# data
+data/raw/
+data/processed/
+*.csv
+
+# outputs
+reports/figures/
