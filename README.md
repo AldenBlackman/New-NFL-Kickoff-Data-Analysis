@@ -51,13 +51,17 @@ From the NFL's operation website, the changes to the rule are listed as follows:
 ## Results
 
 # Touchback Rates
- - For my first question: did the new rule lead to more returns? I was able to do a simple touchback percentage calculation and see that that 63.3% of kickoffs this year were touchbacks.  From the article found at this link: https://www.forbes.com/betting/football/nfl/kickoff-rule-change/#:~:text=Kick%20returners%20avoided%20these%20hits,in%20NFL%20history%20(21.8%25). , the 2023 touchback percentage was 79.2%.  So after one year with the dynamic kickoff, there was a clear rise in returned kickoffs.
+For my first question: did the new rule lead to more returns? I was able to do a simple touchback percentage calculation and see that that 63.3% of kickoffs this year were touchbacks.  From the article found at this link: https://www.forbes.com/betting/football/nfl/kickoff-rule-change/#:~:text=Kick%20returners%20avoided%20these%20hits,in%20NFL%20history%20(21.8%25). , the 2023 touchback percentage was 79.2%.  So after one year with the dynamic kickoff, there was a clear rise in returned kickoffs.
 
-- I also wanted to look into team-by-team data to see if there were any teams that were choosing to kick more touchbacks, or any teams that were better at gaining yards on returns.
+I also wanted to look into team-by-team data to see if there were any teams that were choosing to kick more touchbacks, or any teams that were better at gaining yards on returns.
+
 ![Kicking Team Touchback Percentage](reports/figures/kicking_team_touchback_percentage.png)
- - This plot shows the percentage of the time that teams kicked touchbacks in descending order.  Some teams like the Commanders and Saints kicked touchbacks very rarely, and other teams like the Jaguars and Colts Kicked Touchbacks over 80% of the time.
+
+ The plot above shows the percentage of the time that teams kicked touchbacks in descending order.  Some teams like the Commanders and Saints kicked touchbacks very rarely, and other teams like the Jaguars and Colts Kicked Touchbacks over 80% of the time.
+
 ![Return Team Tuchback Taken Percentage](reports/figures/return_team_touchback_taken_percentage.png)
-- This plot shows similar information from the perspective of the returning team, how often did they take a touchback?  All teams besides the eagles (who coincidentally won the super bowl the year that this data was taken from), took touchbacks more than 50% of the time.  One thing to notice is the league leading touchback taken rate of the Broncos.  I found in my next analysis that this return unit had the highest yards per return in the league, so it makes sense that teams wouldn't want to kick them the ball.  Teams also may opt to take a high percentage of touchbacks because their return unit isn't very good, and they know that the touchback will provide them better starting field position.
+
+The above plot shows similar information from the perspective of the returning team, how often did they take a touchback?  All teams besides the eagles (who coincidentally won the super bowl the year that this data was taken from), took touchbacks more than 50% of the time.  One thing to notice is the league leading touchback taken rate of the Broncos.  I found in my next analysis that this return unit had the highest yards per return in the league, so it makes sense that teams wouldn't want to kick them the ball.  Teams also may opt to take a high percentage of touchbacks because their return unit isn't very good, and they know that the touchback will provide them better starting field position.
 
 # Starting Field Position
 I also plotted kicking and returning team average starting field position on non touchback kickoffs to see what teams had figured out any strategies to exploit this new rule.
@@ -72,7 +76,9 @@ From these plots we can see how good teams are at defending kickoff returns and 
 
 ![Touchback Taken vs Average Return Length](reports/figures/touchback_taken_vs_average_return_length.png)
 
-We can see that there is a slight correlation between how good a team is on their returns and the amount of touchbacks they take.  Teams are far less likely to allow teams with good return units the chance at a big play, and will do their best to prevent their returner from taking the ball out.  Another conclusion is that while the ball certainly was more in play this season, the league probably wants the touchback taken % to be even lower, hence moving the touchback starting field position to the 35 yard line for the 2025 season.  With this change, there is now no team that would get better field position on average from returns than taking a touchback, which will force teams to kick into the landing zone more, generating more returns.
+I investigated the relationship between touchback kicked/taken and return unit success by making scatter plots of the breakdowns above.  We can see that there is a slight correlation between how good a team is on their returns and the amount of touchbacks they take.  Teams are far less likely to allow teams with good return units the chance at a big play, and will do their best to prevent their returner from taking the ball out.  
+
+Another conclusion is that while the ball certainly was more in play this season, the league probably wants the touchback taken % to be even lower, hence moving the touchback starting field position to the 35 yard line for the 2025 season.  With this change, there is now no team that would get better field position on average from returns than taking a touchback, which will force teams to kick into the landing zone more, generating more returns.
 
 # It's only a few yards — why does it matter?
 

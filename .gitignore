@@ -14,6 +14,3 @@ __pycache__/
 data/raw/
 data/processed/
 *.csv
-
-# outputs
-reports/figures/
